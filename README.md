@@ -53,10 +53,10 @@ have 5 different items with values varying between -0.2 and 0.2:
 item_values = {'A': .2, 'B': .1, 'C': 0, 'D': -.1, 'E': -.2}
 ```
 
-So the sequences `['B', 'E', 'C', 'D']` as a target output of `[.1, -.1, -.1, -.2']`.
+So the sequence `['B', 'E', 'C', 'D']` as a target output of `[.1, -.1, -.1, -.2']`.
 
-To perform this task accurately a recurrent network must integrate all the
-previous inputs into a cumulative sum.
+To perform this task accurately a recurrent network must integrate and remember
+all the previous inputs into a cumulative sum.
 
 ## Model
 
@@ -82,10 +82,10 @@ The parameters of the network must be optimized depending on the task:
 ## Files
 
 Here is a list of the source files and what they relate to:
-- `leakycell.py` and `leakyRNNs.py` are custom implementations of echo state networks in `PyTorch`
+- `leakycell.py` and `leakyRNNs.py` are custom implementations of a leaky recurrent layer and echo state networks in `PyTorch`
 - `genetic_algorithm.py` contains all the classes of the genetic algorithm
-- `sequential_task.py` contains all the functions to create inputs and outputs for the sequential task described above
-- `config.py` allows you to specify parameters for the example such as the nature of the optimized parameters, and parameters of the optimization itself
+- `sequential_task.py` contains all the functions to create inputs and outputs and train the network for the sequential task described above
+- `config.py` allows you to specify parameters for the example such as the network parameters, and parameters of the optimization itself
 - `utils.py` contains helper functions
 - `main.py` contains the main script to run the example
 
@@ -109,13 +109,13 @@ conda activate geneticalgo
 
 In the folder `src` the file `main.py` performs the following operations:
 - optimize the parameters of the recurrent network
-- write the results in `.csv` and interactive `.html` files in an output folder
+- write the results into `.csv` and interactive `.html` files in an output folder
 - plot the results of two examples of the network running with optimized parameters
 
 Simply run `python main.py` in the command line with the proper environment activated.
 
 The `.html` file allows interactive exploration of the optimization results with
-the [Hiplot](https://ai.facebook.com/blog/hiplot-high-dimensional-interactive-plots-made-easy/) tool.
+the [Hiplot](https://ai.facebook.com/blog/hiplot-high-dimensional-interactive-plots-made-easy/) tool. Open it with a browser to use it.
 
 ### Customizing the example
 
