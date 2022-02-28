@@ -42,7 +42,7 @@ this function test each parameter set in parallel for faster computation.
 # Example
 
 This repository contains an optimization example demonstrating how to find
-parameters for recurrent neural network associated values to sequences.
+the hyperparameters of recurrent neural network associating values to sequences.
 
 ## Task
 
