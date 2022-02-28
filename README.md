@@ -63,13 +63,13 @@ previous inputs into a cumulative sum.
 ![Schema of an echo state network](https://www.researchgate.net/profile/Joschka-Boedecker/publication/256459964/figure/fig1/AS:298010991972352@1448062765089/The-architecture-of-a-typical-Echo-State-Network-ESN-which-belongs-to-the-class-of.png)
 
 To perform this task we use a [Reservoir recurrent
-network][https://en.wikipedia.org/wiki/Reservoir_computing]. It has the
+network](https://en.wikipedia.org/wiki/Reservoir_computing). It has the
 particularity that its recurrent weights are not trained, but are randomly
 generated according to parameters that endow the network with a given dynamic.
 The training is performed on the readout weights by performing a simple
 regularized regression between the activity of the recurrent units and the
 target output. Here we use an [echo state
-network][http://www.scholarpedia.org/article/Echo_state_network] (ESN) version
+network](http://www.scholarpedia.org/article/Echo_state_network) (ESN) version
 that implements leaky units (a single unit has a leaky memory of its past
 inputs).
 
@@ -115,7 +115,7 @@ In the folder `src` the file `main.py` performs the following operations:
 Simply run `python main.py` in the command line with the proper environment activated.
 
 The `.html` file allows interactive exploration of the optimization results with
-the [Hiplot][https://ai.facebook.com/blog/hiplot-high-dimensional-interactive-plots-made-easy/] tool.
+the [Hiplot](https://ai.facebook.com/blog/hiplot-high-dimensional-interactive-plots-made-easy/) tool.
 
 ### Customizing the example
 
