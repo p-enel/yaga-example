@@ -12,26 +12,26 @@ _time_stamp = datetime.now().strftime("%Y_%m_%d-%I_%M_%S_%p")
 @dataclass()
 class Params:
     '''Parameters of a genetic algorithm evolution'''
-    population_size: int = 50  # minimum 10
+    population_size: int = 20  # minimum 10
 
     # The number of sequences used to train and test the network
-    train_size: int = 100
-    test_size: int = 50
+    train_size: int = 300
+    test_size: int = 100
 
     # The maximum number of generations/iterations
     ngenerations: int = 100
 
     # A fitness threshold for early stopping of the evolution: the average
     # difference between the best fitness for 5 successive generations
-    threshold: int = .0001
+    threshold: int = 5e-5
 
     # The number of times a set of parameters is tested, fitness is the average of the repeated tests
     nrepetitions: int = 5
 
     output_dir: Path = Path(_working_dir / "output")
     path_results_csv: Path = Path(_working_dir / "output" / ("reservoir_param_search_" + _time_stamp + ".csv"))
-    path_hiplot: Path = Path(_working_dir / "output" / ("reservoir_param_search" + _time_stamp + ".html"))
-    path_config: Path = Path(_working_dir / "output" / ("optimization_params" + _time_stamp + ".json"))
+    path_hiplot: Path = Path(_working_dir / "output" / ("reservoir_param_search_" + _time_stamp + ".html"))
+    path_config: Path = Path(_working_dir / "output" / ("optimization_params_" + _time_stamp + ".json"))
 
     def to_dict(self) -> Dict:
         return {'population_size': self.population_size,

@@ -105,7 +105,7 @@ def make_dir():
 
 def plot_test(test_results: Dict, sequence_item_values: Dict):
     sns.set(font_scale=1.3, style='whitegrid')
-    plt.figure(figsize=(15, 10))
+    plt.figure(figsize=(10, 7))
     title = 'Predicted and actual value obtained with best parameters'
     items = list(sequence_item_values.keys())
     items.sort()
@@ -135,4 +135,5 @@ def plot_test(test_results: Dict, sequence_item_values: Dict):
     plt.ylabel('Value of sequence')
     tick_labels = test_results['sequences'][1]
     plt.xticks(ticks=range(len(tick_labels)), labels=tick_labels)
+    plt.tight_layout()
     plt.show()
